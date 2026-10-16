@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-16T11:09:09.680Z",
+  "kind": "read-only RPC observation, not independent attestation",
+  "configuredChainId": 1,
+  "transactionsBroadcast": 0,
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "address": "0xdc491601340e346d52bf7ca871314efb62514d8a",
+      "codeBytes": 1266,
+      "runtimeKeccak256": "0xe732aa7dcd48dbd987f24eb529470ca0b396ac6ff116867a095ad533d8808576"
+    },
+    {
+      "name": "QuorumSeats",
+      "address": "0xb61558f0699954f14168b4b86da050665c1343e8",
+      "codeBytes": 9342,
+      "runtimeKeccak256": "0xf159f8a3f0ee739f69ae4a7b8642165f9a94ff2daac21ed3a3a57b672f72b85d"
+    },
+    {
+      "name": "QuorumBoard",
+      "address": "0xc0f1d9ffb8a6bd6245166324f277298a511e22f1",
+      "codeBytes": 10323,
+      "runtimeKeccak256": "0x9efcfadce7276ffaf9d5bc4a902e325b82ecf87446ccb8d35dba12df75bd1fc7"
+    },
+    {
+      "name": "QuorumAssembly",
+      "address": "0xabe39deebec84e7462a4de99f5b5d3e0061a5300",
+      "codeBytes": 8879,
+      "runtimeKeccak256": "0x05bbec46bd8b2479075aae6a55bf60f65cd25527c876f20b68a0b4baac479784"
+    },
+    {
+      "name": "QuorumSafePolicy",
+      "address": "0x727b6314c913a53d995fb4ad669d3dd8f10f668b",
+      "codeBytes": 3431,
+      "runtimeKeccak256": "0x58387b68431e7af478f2f466ccc8e870544c83110ee13f91d533672af173de96"
+    },
+    {
+      "name": "QuorumGovernance",
+      "address": "0x07a7503968c3fd10473b2a72c046b4f613411fac",
+      "codeBytes": 24393,
+      "runtimeKeccak256": "0x233b24b619c4a928c5b773c6632333681787f848329e0d2a919dd4776bb70185"
+    },
+    {
+      "name": "QuorumReleases",
+      "address": "0x8a07206ab7a58e67551c7dd88d2d0456eef023e6",
+      "codeBytes": 2977,
+      "runtimeKeccak256": "0x6dd3904c01015b897011efe2e777529668cf92b7148bd9001e1ab24536065926"
+    }
+  ],
+  "rpcChainId": 1,
+  "block": {
+    "number": "26204699",
+    "hash": "0x1f5bb7e73c56786c80e15637ca8943eb554ac970a836778d488d36f2cc937f6e",
+    "timestamp": "1792148939"
+  },
+  "state": {
+    "LaunchToken.symbol": "QRM",
+    "LaunchToken.decimals": 18,
+    "LaunchToken.totalSupply": "1000000000000000000000000000",
+    "QuorumSeats.configurationHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "QuorumSeats.constitutionHash": "0x9d86f4254fcd74f664bd445764be4e6d68d44757428d9cd1f13e5459100c2162",
+    "QuorumSeats.connectedAtAdmission": "0",
+    "QuorumSeats.depositedCount": "0",
+    "QuorumSeats.owner": "0xf9C003D5a247BB5282B2d6Df534ed51860b14210",
+    "QuorumGovernance.handedOver": false,
+    "QuorumGovernance.founder": "0x5D31bB1d7e4a9F3dfA3a3D421174Bca73705f087",
+    "QuorumGovernance.proposalCount": "0",
+    "QuorumReleases.currentRelease": "0x0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "poolObservation": {
+    "passed": true,
+    "poolId": "0xf5a0154f3babd0b252bfb25f55a445fa97eefafe1c56db38368ed1ae11b1f656",
+    "slot0": [
+      "38421146501589574220866993383571",
+      123686,
+      0,
+      12500
+    ],
+    "input": "1 IMD",
+    "amountOutAtomic": "232145440440940034983488",
+    "gasEstimate": "37451",
+    "note": "Read-only quoter simulation. No approval, swap or liquidity transaction was sent."
+  },
+  "passed": true
+}

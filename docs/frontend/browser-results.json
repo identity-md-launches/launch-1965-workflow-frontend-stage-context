@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-10-16T11:21:41.190Z",
+  "fixtureNotice": "All transaction flows use offline mocked EIP-1193 and RPC. No live transaction or real wallet signature.",
+  "results": [
+    {
+      "name": "390 first screen includes product, wallet, attendance state and primary feedback action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Wallet dialog keyboard Escape and focus restoration",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "EIP-6963 named discovery and connection rejection recovery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unknown wallet chain triggers switch → exact add-chain → switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Connected live-read fixture populates seat authority and 18/24 attendance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Contract simulation failure prevents a transaction and exposes recovery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Rejected transaction unlocks the action and does not report success",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Typed feedback binds chain hour, seat, version and confirmed revision; receipt locks duplicate credit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Discussion submit confirms and reloads readable chain content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Proposal commitment, competing nonce rejection, readable announcement and opening ballot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Frozen eligible seat can vote once; premature execution remains disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "IMD buy: quoter simulation, exact ERC-20 approval, Permit2 approval, simulated router execute with zero ETH",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Event reads begin at deployment and keep each log range bounded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All 11 routes reflow at 320, 390 and 1440 without horizontal scroll",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Chinese locale translates navigation and primary routes with 390 reflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ABI tampering blocks app initialization",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Missing contract code fails closed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Phone wallet picker lists four app-browser links and Coinbase Smart Wallet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "WebKit: connect, read seat, sign feedback, review, confirm and mobile reflow",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "consoleOrResourceErrors": []
+}

@@ -1,0 +1,177 @@
+{
+  "checkedAt": "2026-10-16T11:19:51.761Z",
+  "scope": "Automated axe-core checks, not screen-reader or full WCAG certification",
+  "results": [
+    {
+      "lang": "en",
+      "route": "participation",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ],
+      "passes": 44
+    },
+    {
+      "lang": "en",
+      "route": "membership",
+      "violations": [],
+      "incomplete": [],
+      "passes": 42
+    },
+    {
+      "lang": "en",
+      "route": "governance",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "passes": 42
+    },
+    {
+      "lang": "en",
+      "route": "discussion",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "passes": 41
+    },
+    {
+      "lang": "en",
+      "route": "treasury",
+      "violations": [],
+      "incomplete": [],
+      "passes": 42
+    },
+    {
+      "lang": "en",
+      "route": "swap",
+      "violations": [],
+      "incomplete": [],
+      "passes": 45
+    },
+    {
+      "lang": "en",
+      "route": "releases",
+      "violations": [],
+      "incomplete": [],
+      "passes": 46
+    },
+    {
+      "lang": "en",
+      "route": "connector",
+      "violations": [],
+      "incomplete": [],
+      "passes": 45
+    },
+    {
+      "lang": "en",
+      "route": "constitution",
+      "violations": [],
+      "incomplete": [],
+      "passes": 39
+    },
+    {
+      "lang": "en",
+      "route": "bootstrap",
+      "violations": [],
+      "incomplete": [],
+      "passes": 46
+    },
+    {
+      "lang": "en",
+      "route": "activity",
+      "violations": [],
+      "incomplete": [],
+      "passes": 46
+    },
+    {
+      "lang": "zh",
+      "route": "participation",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr"
+      ],
+      "passes": 44
+    },
+    {
+      "lang": "zh",
+      "route": "membership",
+      "violations": [],
+      "incomplete": [],
+      "passes": 42
+    },
+    {
+      "lang": "zh",
+      "route": "governance",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "passes": 42
+    },
+    {
+      "lang": "zh",
+      "route": "discussion",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "passes": 41
+    },
+    {
+      "lang": "zh",
+      "route": "treasury",
+      "violations": [],
+      "incomplete": [],
+      "passes": 42
+    },
+    {
+      "lang": "zh",
+      "route": "swap",
+      "violations": [],
+      "incomplete": [],
+      "passes": 45
+    },
+    {
+      "lang": "zh",
+      "route": "releases",
+      "violations": [],
+      "incomplete": [],
+      "passes": 46
+    },
+    {
+      "lang": "zh",
+      "route": "connector",
+      "violations": [],
+      "incomplete": [],
+      "passes": 45
+    },
+    {
+      "lang": "zh",
+      "route": "constitution",
+      "violations": [],
+      "incomplete": [],
+      "passes": 39
+    },
+    {
+      "lang": "zh",
+      "route": "bootstrap",
+      "violations": [],
+      "incomplete": [],
+      "passes": 46
+    },
+    {
+      "lang": "zh",
+      "route": "activity",
+      "violations": [],
+      "incomplete": [],
+      "passes": 46
+    },
+    {
+      "lang": "zh",
+      "route": "wallet dialog",
+      "violations": []
+    }
+  ]
+}

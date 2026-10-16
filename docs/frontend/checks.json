@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-16T11:22:31.019817+00:00",
+  "authority": "Worker self-checks only; no independent certification or production handover acceptance.",
+  "sourceCommit": "44d1ae8434901783800c96727562437512f4560c",
+  "manifestSha256": "d627a1353e510c55574fb58381566a1ac28cd9e2c7b80b156dab10ea3efed510",
+  "commands": [
+    {
+      "command": "npm run build --prefix web",
+      "exitCode": 0,
+      "result": "TypeScript and Vite build passed; 7 canonical ABI hashes verified; manifest written last."
+    },
+    {
+      "command": "npm run typecheck --prefix web",
+      "exitCode": 0
+    },
+    {
+      "command": "npm test --prefix web",
+      "exitCode": 0,
+      "tests": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "command": "npm run check:export --prefix web",
+      "exitCode": 0,
+      "contracts": 7,
+      "assets": 25,
+      "assetBytes": 1765686,
+      "exportIncludingManifestBytes": 1772674
+    },
+    {
+      "command": "npm run test:browser --prefix web",
+      "exitCode": 0,
+      "groupedChecks": 19,
+      "engines": [
+        "Chromium",
+        "WebKit"
+      ],
+      "checkedAt": "2026-10-16T11:21:41.190Z",
+      "evidence": "browser-results.json"
+    },
+    {
+      "command": "npm run test:a11y --prefix web",
+      "exitCode": 0,
+      "scans": 23,
+      "violations": 0,
+      "scansWithIncompleteRules": 6,
+      "evidence": "accessibility-results.json"
+    },
+    {
+      "command": "node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste",
+      "exitCode": 0,
+      "checks": 16,
+      "passed": 16,
+      "evidence": "taste.json"
+    },
+    {
+      "command": "npm run check:rpc --prefix web",
+      "exitCode": 0,
+      "kind": "Read-only live chain/code/state/quote observation",
+      "transactionsBroadcast": 0,
+      "evidence": "rpc-read.json"
+    }
+  ],
+  "handoffCopiesByteIdentical": true,
+  "packageManifestMatchesLockfile": true,
+  "excludedFromSubmission": [
+    "frontend node_modules",
+    "package manager caches",
+    "browser binaries and OS libraries",
+    "test/scratch"
+  ],
+  "limitations": "See VALIDATION.md. Real wallets/funds, founder rehearsal, independent audit and publication were not validated."
+}

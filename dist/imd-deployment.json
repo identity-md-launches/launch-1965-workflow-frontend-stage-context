@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "launchId": "66a8ee84-8bce-4c2f-8782-cd806cf42826",
+  "chainId": 1,
+  "sourceCommit": "44d1ae8434901783800c96727562437512f4560c",
+  "attestationHash": "11376fdfe84cfa9e1022d5f2a8a42688d4b257856d82497dc0eb4d6f0cb350c5",
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "address": "0xdc491601340e346d52bf7ca871314efb62514d8a",
+      "abiHash": "893d962efb0e48f71bce8ba27ec464ea2ec0205482ca45507fc688f9ab7ac4fe",
+      "abiPath": "abi/LaunchToken.json"
+    },
+    {
+      "name": "QuorumSeats",
+      "address": "0xb61558f0699954f14168b4b86da050665c1343e8",
+      "abiHash": "e55e50459909b4d99b64790ef3c41050743a9f2094c5b542f2c4ec7af8a77d21",
+      "abiPath": "abi/QuorumSeats.json"
+    },
+    {
+      "name": "QuorumBoard",
+      "address": "0xc0f1d9ffb8a6bd6245166324f277298a511e22f1",
+      "abiHash": "8e63fb934b85e56b5d4210805a969a6ad258b30017f6d6e3220f5312d6fcb068",
+      "abiPath": "abi/QuorumBoard.json"
+    },
+    {
+      "name": "QuorumAssembly",
+      "address": "0xabe39deebec84e7462a4de99f5b5d3e0061a5300",
+      "abiHash": "e24fa4054fdbf38b28f6f4914b68c3f80944a4122ebf35f418fd02364b2401fa",
+      "abiPath": "abi/QuorumAssembly.json"
+    },
+    {
+      "name": "QuorumSafePolicy",
+      "address": "0x727b6314c913a53d995fb4ad669d3dd8f10f668b",
+      "abiHash": "f24171a156c172b5062c47adf27fc3a48629afe40d24a9d1f2c10ac0bb164e2e",
+      "abiPath": "abi/QuorumSafePolicy.json"
+    },
+    {
+      "name": "QuorumGovernance",
+      "address": "0x07a7503968c3fd10473b2a72c046b4f613411fac",
+      "abiHash": "c5047129d194ce7713a2cd32d934af8e66dac08aaceaaade49b1729ebd18fe55",
+      "abiPath": "abi/QuorumGovernance.json"
+    },
+    {
+      "name": "QuorumReleases",
+      "address": "0x8a07206ab7a58e67551c7dd88d2d0456eef023e6",
+      "abiHash": "e085d819e610b833850a57b4300b51ca43b13495187e2d9a512de4c8835e3921",
+      "abiPath": "abi/QuorumReleases.json"
+    }
+  ],
+  "assets": [
+    {
+      "path": "abi/LaunchToken.json",
+      "sha256": "44ed62cfe1e340c906abcae06c626e471394a1d62f2482962328dbcdd93429d4"
+    },
+    {
+      "path": "abi/QuorumAssembly.json",
+      "sha256": "1feff0cfa43d08610c080ea063fff0ad03d1eef38af955dbcb1c7fd3f872791b"
+    },
+    {
+      "path": "abi/QuorumBoard.json",
+      "sha256": "5ce0fbeeac0eea31a61e9fd309c8a1d99907538c86ec1b29575c9423ec4a535e"
+    },
+    {
+      "path": "abi/QuorumGovernance.json",
+      "sha256": "aec66e70659b759a0cfa157b2b9a00e39fe71045682fa6221e13e29876c0b032"
+    },
+    {
+      "path": "abi/QuorumReleases.json",
+      "sha256": "ec7f937432d6140307b995de610541da28d4a6df5063cf94cf83c23e49ca4b33"
+    },
+    {
+      "path": "abi/QuorumSafePolicy.json",
+      "sha256": "353ab2ef8d336130d4798a3556c2ad7afa75458e169df15205cb92f242019dba"
+    },
+    {
+      "path": "abi/QuorumSeats.json",
+      "sha256": "cdd3af17ef72fcb8dc89a18660b66626202c97dae4bd045848e103e296b6f5cc"
+    },
+    {
+      "path": "assets/ccip-DSwVq3i6.js",
+      "sha256": "a5ff072b6e9d2b6c49a3c2d921d5f487300835b8bfa9e5633877bcadbd1290a3"
+    },
+    {
+      "path": "assets/hooks.module-DE9oX6xH.js",
+      "sha256": "18290b66f5736ddfcd375526f88fd55c2ecf072d6feee11d3554a78df4a3594f"
+    },
+    {
+      "path": "assets/index-B0VOEcpn.js",
+      "sha256": "fffc3be13007ab791fa0afd4768d619ba40d9900caded089360ef696afffcc83"
+    },
+    {
+      "path": "assets/index-BYNJ-z9S.js",
+      "sha256": "d884158c250ebb1c39eff8ad28dff6de9897f8fa762e88993677922c89c67438"
+    },
+    {
+      "path": "assets/index-Ce2cEsIP.css",
+      "sha256": "dc0b93c20a3f8224f68bc5d1421273ce36e725a1b4ae44e752d694070d7937e3"
+    },
+    {
+      "path": "assets/index-Dmb1UvWm.js",
+      "sha256": "5987ecf8ce74cb04778db3e02f256bd269318046c801ebd20cf65fb2efef2243"
+    },
+    {
+      "path": "connector.tar.gz",
+      "sha256": "67eba302ab89ed22b3fdc454a77f55e8cb8eb49ce773bd8db6f5671440460521"
+    },
+    {
+      "path": "constitution.md",
+      "sha256": "bc2abc8f3888a40af66552038090be3dcbd776c05f67c197d1f8210627b3f7fc"
+    },
+    {
+      "path": "constitution.zh.md",
+      "sha256": "26567e2bda12ef1228746303343113148ec74abdf9814c68b9b8b03a3135d5e4"
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "55957afab9620de5b8a282320ac587fd935e9d83918b12a75adad16ba8cfeab0"
+    },
+    {
+      "path": "history.json",
+      "sha256": "7b4047a21873b04925f5b364edaa3c3180208b675ec73b1fcf988714404206ec"
+    },
+    {
+      "path": "index.html",
+      "sha256": "2c951be44b8ba1a67c33cc06e956a871d8feea0c07f358bb66c97320542c296a"
+    },
+    {
+      "path": "share.png",
+      "sha256": "155e5ac776d03a3e91824a0ad8f480b71d08acd6f77f9a151c0e9f2716c0e1b3"
+    },
+    {
+      "path": "wallets/browser.svg",
+      "sha256": "3a794d9299a864d6dac0aba619055127310d8b010b38ff4454a74965182ef29f"
+    },
+    {
+      "path": "wallets/coinbase.svg",
+      "sha256": "a82c3b4f6715cbca630040e8b51436c5dfefba524a5cab128270d5e99164a33d"
+    },
+    {
+      "path": "wallets/metamask.svg",
+      "sha256": "d4d2e371255a9a44f01c17653279003919c7cff48d88498d127e86fd388c369a"
+    },
+    {
+      "path": "wallets/phantom.svg",
+      "sha256": "f841f8112e131259a2e5123177950099c79487e61e77971f4e193e6c374419eb"
+    },
+    {
+      "path": "wallets/rabby.svg",
+      "sha256": "dcae4de88ebfa10cffa1fe28df13d7c8c0b40736ef2b704f1f2fc348e777e443"
+    }
+  ],
+  "poolKey": {
+    "fee": 12500,
+    "hooks": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
+    "currency0": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "currency1": "0xdc491601340e346d52bf7ca871314efb62514d8a",
+    "tickSpacing": 60
+  },
+  "network": {
+    "chainId": 1,
+    "name": "Ethereum",
+    "testnet": false,
+    "rpcUrls": [
+      "https://ethereum-rpc.publicnode.com",
+      "https://eth.drpc.org"
+    ],
+    "explorer": "https://etherscan.io",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "faucets": [],
+    "uniswapV4": {
+      "poolManager": "0x000000000004444c5dc75cb358380d2e3de08a90",
+      "universalRouter": "0x66a9893cc07d91d95644aedd05d03f95e1dba8af",
+      "quoter": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+      "stateView": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+      "positionManager": "0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e",
+      "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3"
+    },
+    "pairToken": {
+      "address": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+      "symbol": "IMD",
+      "name": "Identity.md",
+      "decimals": 18
+    },
+    "otherPairTokens": [
+      {
+        "id": "fwa",
+        "address": "0xa0df17b5ac76ababa36e1450e2cbcd18a620c845",
+        "symbol": "FWA",
+        "name": "Fake World Assets",
+        "decimals": 18
+      }
+    ]
+  },
+  "walletAddChain": {
+    "chainId": "0x1",
+    "chainName": "Ethereum",
+    "rpcUrls": [
+      "https://ethereum-rpc.publicnode.com",
+      "https://eth.drpc.org"
+    ],
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "blockExplorerUrls": [
+      "https://etherscan.io"
+    ]
+  }
+}

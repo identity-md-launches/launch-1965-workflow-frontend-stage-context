@@ -1,0 +1,35 @@
+{
+  "name": "quorum-console",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/export.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "check:export": "node scripts/check-export.mjs",
+    "share": "node scripts/share.mjs",
+    "test:a11y": "node tests/audit.mjs",
+    "check:rpc": "node scripts/check-rpc.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.90.2",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "viem": "2.37.9",
+    "wagmi": "2.17.5"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.16",
+    "@types/react-dom": "19.1.9",
+    "@vitejs/plugin-react": "5.0.4",
+    "axe-core": "4.10.3",
+    "playwright": "1.56.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "vite": "7.1.9"
+  }
+}

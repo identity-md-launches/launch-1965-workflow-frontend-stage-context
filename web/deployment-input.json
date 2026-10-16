@@ -1,0 +1,140 @@
+{
+  "chainId": 1,
+  "poolKey": {
+    "fee": 12500,
+    "hooks": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
+    "currency0": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "currency1": "0xdc491601340e346d52bf7ca871314efb62514d8a",
+    "tickSpacing": 60
+  },
+  "repoUrl": "https://github.com/identity-md-launches/launch-1948-workflow-contract-stage-context",
+  "version": 1,
+  "launchId": "66a8ee84-8bce-4c2f-8782-cd806cf42826",
+  "manifest": {
+    "kind": "evm_project",
+    "pool": {
+      "fee": 12500,
+      "tickSpacing": 60,
+      "initialPrice": "79228162514264337593543950336",
+      "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7"
+    },
+    "notes": "QUORUM (QRM) uses six application contracts: QuorumSeats holds refundable membership stakes; QuorumBoard records discussion and hourly participation; QuorumAssembly freezes electorates and records work acceptance; QuorumSafePolicy checks the existing Safe's identity and authority configuration; QuorumGovernance manages proposals, budgets and explicit Safe handover; QuorumReleases records approved artifacts and publication observations. All owner and treasury arguments resolve through $owner to the existing launch Safe. The separate founder arguments identify the approver explicitly named in the approved workflow; they do not replace the launch owner. QuorumSeats' constitution argument is Keccak-256 of the exact docs/constitution.md bytes. QuorumSafePolicy's singleton and proxy hashes come from docs/evidence/safe-mainnet.json at Ethereum block 26203746; this recorded observation is not a fresh configuration check. Constructors require no external calls, and the manifest requests no initialization calls. The existing owner-only admission setting must bind the canonical NFT, fixed connected-seat count and admission source/hash before deposits. Deployment does not constitute founder acceptance or governance handover. The recorded Safe fallback handler must be cleared before acceptance, and the accepted code's bootstrap and handover conditions remain applicable. The factory supplies the LP, MerkleDistributor and initialization-only pool guard. The pool fee is 1.25%; initialPrice is the required manifest value, while the deployer derives the effective opening price from the launch policy and eventual token ordering. Source publication, signed artifact linkage, admission and deployment are service responsibilities. Independent review of the accepted source and this manifest remains required.",
+    "token": {
+      "name": "QUORUM",
+      "symbol": "QRM",
+      "contract": "LaunchToken",
+      "decimals": 18
+    },
+    "contracts": [
+      {
+        "contract": "QuorumSeats",
+        "constructorArgs": [
+          "$token",
+          "$owner",
+          "0x9d86f4254fcd74f664bd445764be4e6d68d44757428d9cd1f13e5459100c2162"
+        ]
+      },
+      {
+        "contract": "QuorumBoard",
+        "constructorArgs": [
+          "$contract:QuorumSeats"
+        ]
+      },
+      {
+        "contract": "QuorumAssembly",
+        "constructorArgs": [
+          "$contract:QuorumSeats",
+          "$contract:QuorumBoard"
+        ]
+      },
+      {
+        "contract": "QuorumSafePolicy",
+        "constructorArgs": [
+          "$owner",
+          "0x5d31bb1d7e4a9f3dfa3a3d421174bca73705f087",
+          "0xdda019cbd7c867a533a2a86e5c53434fdc50b13122b5a5ddb4a8df61b31c20f2",
+          "0x4e381985ca68b3e5d27b4425fa581c19cf33146d3f887a3cfca96f55528ea46f"
+        ]
+      },
+      {
+        "contract": "QuorumGovernance",
+        "constructorArgs": [
+          "$contract:QuorumSeats",
+          "$contract:QuorumBoard",
+          "$contract:QuorumAssembly",
+          "$owner",
+          "0x5d31bb1d7e4a9f3dfa3a3d421174bca73705f087",
+          "$contract:QuorumSafePolicy"
+        ]
+      },
+      {
+        "contract": "QuorumReleases",
+        "constructorArgs": [
+          "$contract:QuorumGovernance",
+          "$owner"
+        ]
+      }
+    ]
+  },
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "txHash": "0xc1186c17b3dd4939c4d678d10cbc8ad89fe0db7b54b06a130e9fcab79d6d3d1b",
+      "abiHash": "893d962efb0e48f71bce8ba27ec464ea2ec0205482ca45507fc688f9ab7ac4fe",
+      "address": "0xdc491601340e346d52bf7ca871314efb62514d8a",
+      "blockNumber": 26204466,
+      "creationCodeHash": "317d4ee6d694c5a1e251add6d6db3fb0a77f8db6bd09a70ea554c94e982930f0"
+    },
+    {
+      "name": "QuorumSeats",
+      "txHash": "0xc1186c17b3dd4939c4d678d10cbc8ad89fe0db7b54b06a130e9fcab79d6d3d1b",
+      "abiHash": "e55e50459909b4d99b64790ef3c41050743a9f2094c5b542f2c4ec7af8a77d21",
+      "address": "0xb61558f0699954f14168b4b86da050665c1343e8",
+      "blockNumber": 26204466,
+      "creationCodeHash": "9849e9ba2eb8668071f216df459c885b6f91cce442fa46e4d6f5f772c7808c6b"
+    },
+    {
+      "name": "QuorumBoard",
+      "txHash": "0xc1186c17b3dd4939c4d678d10cbc8ad89fe0db7b54b06a130e9fcab79d6d3d1b",
+      "abiHash": "8e63fb934b85e56b5d4210805a969a6ad258b30017f6d6e3220f5312d6fcb068",
+      "address": "0xc0f1d9ffb8a6bd6245166324f277298a511e22f1",
+      "blockNumber": 26204466,
+      "creationCodeHash": "b8c780c20db57b0fc208f821d904510c1825ded932a0c4fbe42c41abb8f18e0a"
+    },
+    {
+      "name": "QuorumAssembly",
+      "txHash": "0xc1186c17b3dd4939c4d678d10cbc8ad89fe0db7b54b06a130e9fcab79d6d3d1b",
+      "abiHash": "e24fa4054fdbf38b28f6f4914b68c3f80944a4122ebf35f418fd02364b2401fa",
+      "address": "0xabe39deebec84e7462a4de99f5b5d3e0061a5300",
+      "blockNumber": 26204466,
+      "creationCodeHash": "2b51de5f7582c0d8a87041eaf310dca1270b98dd1dda73c218c8e13235e72fa6"
+    },
+    {
+      "name": "QuorumSafePolicy",
+      "txHash": "0xc1186c17b3dd4939c4d678d10cbc8ad89fe0db7b54b06a130e9fcab79d6d3d1b",
+      "abiHash": "f24171a156c172b5062c47adf27fc3a48629afe40d24a9d1f2c10ac0bb164e2e",
+      "address": "0x727b6314c913a53d995fb4ad669d3dd8f10f668b",
+      "blockNumber": 26204466,
+      "creationCodeHash": "634853e6f39685f5c57ddcbb9390ae3d1a30bd02417b7abf9a8ff593eb114bb0"
+    },
+    {
+      "name": "QuorumGovernance",
+      "txHash": "0xc1186c17b3dd4939c4d678d10cbc8ad89fe0db7b54b06a130e9fcab79d6d3d1b",
+      "abiHash": "c5047129d194ce7713a2cd32d934af8e66dac08aaceaaade49b1729ebd18fe55",
+      "address": "0x07a7503968c3fd10473b2a72c046b4f613411fac",
+      "blockNumber": 26204466,
+      "creationCodeHash": "89c3fc219b6f470bd246968188ce3866f491324b493746c3fe44f413bd284aba"
+    },
+    {
+      "name": "QuorumReleases",
+      "txHash": "0xc1186c17b3dd4939c4d678d10cbc8ad89fe0db7b54b06a130e9fcab79d6d3d1b",
+      "abiHash": "e085d819e610b833850a57b4300b51ca43b13495187e2d9a512de4c8835e3921",
+      "address": "0x8a07206ab7a58e67551c7dd88d2d0456eef023e6",
+      "blockNumber": 26204466,
+      "creationCodeHash": "86f910b012505b9c1a3576c66a60bd8ffe2990ebea9baec62526a2c5a283d50d"
+    }
+  ],
+  "sourceCommit": "44d1ae8434901783800c96727562437512f4560c",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "11376fdfe84cfa9e1022d5f2a8a42688d4b257856d82497dc0eb4d6f0cb350c5"
+}
