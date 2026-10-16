@@ -612,6 +612,11 @@ legend {
   font-size: var(--small);
   margin-bottom: 12px;
 }
+.post-meta > span {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
 .post-body {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

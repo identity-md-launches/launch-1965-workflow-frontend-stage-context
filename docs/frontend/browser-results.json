@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-16T11:21:41.190Z",
+  "checkedAt": "2026-10-16T11:42:52.550Z",
   "fixtureNotice": "All transaction flows use offline mocked EIP-1193 and RPC. No live transaction or real wallet signature.",
   "results": [
     {
@@ -93,10 +93,16 @@
       "detail": ""
     },
     {
-      "name": "WebKit: connect, read seat, sign feedback, review, confirm and mobile reflow",
-      "passed": true,
-      "detail": ""
+      "name": "WebKit interaction",
+      "passed": false,
+      "error": "WebKit could not launch: its executable is absent from the supplied browser installation. No WebKit interaction ran during this revision."
+    },
+    {
+      "name": "Browser suite",
+      "passed": false,
+      "error": "WebKit could not launch: its executable is absent from the supplied browser installation. No WebKit interaction ran during this revision."
     }
   ],
-  "consoleOrResourceErrors": []
+  "consoleOrResourceErrors": [],
+  "revisionNote": "18 Chromium groups passed. The full suite exited 1 at WebKit launch; WebKit results from the previous accepted submission were not revalidated."
 }

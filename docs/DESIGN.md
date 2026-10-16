@@ -35,7 +35,7 @@ The body stack is `Inter, Segoe UI, Noto Sans SC, PingFang SC, Arial, sans-serif
 
 Six sizes are used across the responsive system: 14, 16, 20, 24, 36 and 48 CSS pixels. Body line-height is 1.55, long constitution prose 1.8 (1.75 on small screens), heading line-height 1.1–1.4. Weights are 400, 600 and 700; the main headline is 700. The desktop headline is 48px, changing to 36px at 900px. Section titles use 24px, with compact mobile panel headings at 20px. Inputs remain 16px to avoid mobile focus zoom.
 
-Display tracking is `-.045em`; smaller headings use `-.02em`. The attendance denominator resets tracking to zero instead of inheriting the larger number's pixel spacing. Data uses tabular numerals. Long values wrap with `overflow-wrap:anywhere`; no critical address, amount, hash or message is ellipsized. Long prose is capped at 74ch. Chinese translation is informational; consent binds the exact English constitution file bytes.
+Display tracking is `-.045em`; smaller headings use `-.02em`. The attendance denominator resets tracking to zero instead of inheriting the larger number's pixel spacing. Data uses tabular numerals. Long values wrap with `overflow-wrap:anywhere`; no critical address, amount, hash or message is ellipsized. Discussion seat metadata also uses `min-width:0` and `max-width:100%` on its flex child so a complete uint256 ID wraps at 320 and 390px. Long prose is capped at 74ch. Chinese translation is informational; consent binds the exact English constitution file bytes.
 
 ## Layout
 
@@ -61,8 +61,10 @@ Buttons use a 6px radius; inputs use 5px; panels use 10px; desktop dialogs use 1
 | `Dialog` / `web/src/context.tsx` | Native modal with visible title, close button, backdrop dismissal, Escape, focus containment and focus return. Bottom sheet at 640px. |
 | `Field` / `web/src/context.tsx` | Labeled input/textarea with an explicit accessible name and separate `aria-describedby` help. No placeholder-only fields. |
 | `TxButton`, `Transactions` / `web/src/context.tsx` | Local action progress and errors; shared protection against concurrent signing; chain/ABI/code/wallet readiness gates; simulation, fee estimate, readable review and receipt journal. Review shows target, function, arguments and calldata, not the entire ABI. |
-| `AddressView`, `Data`, `ErrorNote` / `web/src/context.tsx` | Full checksummed addresses with explorer/copy controls; wrapping exact values; persistent live errors. |
+| `AddressView`, `Data`, `ErrorNote` / `web/src/context.tsx` | Full checksummed addresses with explorer/copy controls; wrapping exact values; persistent errors in the selected locale. Unrecognized diagnostics remain in a separate native technical-details disclosure. |
 | `SeatPicker`, `Participation` / `web/src/participation.tsx` | Explicit seat selection, 24 completed-hour cells, onchain count, status and feedback action. Unknown state is visibly unknown. |
+| `Membership` / `web/src/participation.tsx` | Admission loading and read failure are distinct from a successfully read zero configuration hash. Enrollment stays disabled until admission is verified. |
+| `ArtifactComparison` / `web/src/treasury.tsx` | Local file comparison is keyed by release ID and approved site hash. Changing either clears the file and verdict; obsolete pending reads are discarded. The hash verdict follows the selected language. |
 | `ContractForm`, `Inspector` / `web/src/tools.tsx` | ABI-derived exact argument fields, inspectable calldata and contract reads. Privileged budget/release actions are prepared for major proposals, not bypassed. |
 | `EventHistory` / `web/src/events.tsx` | User-triggered bounded log batches, visible cursor and confirmation boundary, local reorg-aware cache. |
 

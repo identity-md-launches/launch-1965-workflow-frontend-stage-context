@@ -69,6 +69,8 @@ export function fixture() {
     proposalCount: 0n,
     voted: false,
     posts: [],
+    currentRelease: zero,
+    releases: {},
     receipts: new Map(),
     requests: [],
     sent: [],
@@ -181,7 +183,7 @@ export function fixture() {
       budgetCount: 0n,
       founderAcceptance: zero,
       postCount: f.postCount,
-      currentRelease: zero,
+      currentRelease: f.currentRelease,
       decimals: 18,
       name: "QUORUM",
       symbol: name === "erc20" ? "IMD" : "QRM",
@@ -235,6 +237,7 @@ export function fixture() {
       return [args[0].exactAmount * 2n, 120000n];
     if (fn === "getPosts")
       return f.posts.slice(Number(args[0]), Number(args[0] + args[1]));
+    if (fn === "getRelease") return f.releases[args[0]];
     if (fn === "getPost") return f.posts[Number(args[0]) - 1] ?? post();
     if (fn === "getProposal")
       return (

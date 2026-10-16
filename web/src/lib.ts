@@ -7,6 +7,7 @@ import {
   BaseError,
   ContractFunctionRevertedError,
 } from "viem";
+import { chineseRecovery } from "./error-messages.ts";
 export const json = (value: unknown) =>
   JSON.stringify(
     value,
@@ -55,7 +56,7 @@ export function boundedText(s: string, max = 2048) {
     throw Error(`Text must contain 1–${max} UTF-8 bytes.`);
   return s;
 }
-export function message(e: unknown) {
+function englishMessage(e: unknown) {
   const err = e as { code?: number; shortMessage?: string; message?: string };
   if (
     err?.code === 4001 ||
@@ -102,6 +103,24 @@ export function message(e: unknown) {
         err?.message ??
         "Request failed. Check your connection and retry."
       ).slice(0, 500);
+}
+export function errorPresentation(e: unknown, lang: "en" | "zh" = "en") {
+  const english = englishMessage(e);
+  if (lang === "en") return { summary: english, details: undefined };
+  const translated = chineseRecovery(english);
+  if (translated) return { summary: translated, details: undefined };
+  if (e instanceof SyntaxError)
+    return {
+      summary: "输入格式无效，请检查 JSON 或网址格式后重试。",
+      details: english,
+    };
+  return {
+    summary: "请求失败，请检查连接及操作条件后重试。可展开技术详情查看原因。",
+    details: english,
+  };
+}
+export function message(e: unknown, lang: "en" | "zh" = "en") {
+  return errorPresentation(e, lang).summary;
 }
 export function executionReady(
   p: {

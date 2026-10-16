@@ -329,7 +329,8 @@ export function Membership({
 }) {
   const rt = useRuntime(),
     { t } = useLocale(),
-    o = useOverview().data,
+    overview = useOverview(),
+    o = overview.data,
     seat = useSeat(id),
     s = seat.data,
     { address: account } = useAccount();
@@ -338,7 +339,8 @@ export function Membership({
     [scopes, setScopes] = useState(3),
     [consent, setConsent] = useState(false);
   const constitution = useConstitution();
-  const configured = o && o.configurationHash !== ZERO_HASH;
+  const configured =
+    overview.isSuccess && overview.data.configurationHash !== ZERO_HASH;
   const owner = same(account, s?.nftOwner),
     depositor = same(account, s?.depositor),
     agentWallet = same(account, s?.agent),
@@ -382,7 +384,19 @@ export function Membership({
           )}
         </p>
       </div>
-      {!configured && (
+      {overview.isPending ? (
+        <div className="notice" role="status">
+          {t("Checking admission…", "正在检查准入…")}
+        </div>
+      ) : overview.isError ? (
+        <div className="notice" role="alert">
+          {t(
+            "Unable to read admission. Refresh to retry.",
+            "无法读取准入状态，请刷新重试。",
+          )}
+        </div>
+      ) : overview.isSuccess &&
+        overview.data.configurationHash === ZERO_HASH ? (
         <div className="notice">
           {t(
             "Admission is not configured. The Safe must publish the canonical NFT, fixed connected-seat count and evidence before enrollment.",
@@ -390,7 +404,7 @@ export function Membership({
           )}{" "}
           <a href="#bootstrap">{t("View setup", "查看设置")}</a>
         </div>
-      )}
+      ) : null}
       <SeatPicker id={id} setId={setId} />
       <ErrorNote error={seat.error} />
       {s && (

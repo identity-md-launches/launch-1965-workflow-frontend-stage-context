@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { formatEther, formatUnits, erc20Abi, keccak256 } from "viem";
 import {
@@ -346,9 +346,7 @@ export function Releases() {
     o = useOverview().data,
     { t } = useLocale();
   const [id, setId] = useState(""),
-    [comparison, setComparison] = useState(""),
-    [error, setError] = useState<unknown>();
-  const selected = id || o?.currentRelease;
+    selected = id || o?.currentRelease;
   const q = useQuery({
     queryKey: ["release", selected],
     enabled: !!selected && selected !== ZERO_HASH,
@@ -391,37 +389,10 @@ export function Releases() {
         ) : q.data ? (
           <>
             <Data value={{ releaseId: selected, ...q.data }} />
-            <label className="field">
-              <span>
-                {t(
-                  "Compare a downloaded site artifact (Keccak-256)",
-                  "对比下载的网站制品（Keccak-256）",
-                )}
-              </span>
-              <input
-                type="file"
-                onChange={async (e) => {
-                  setError(undefined);
-                  setComparison("");
-                  const f = e.target.files?.[0];
-                  if (!f) return;
-                  try {
-                    if (f.size > 32 * 1024 * 1024)
-                      throw Error("Select an artifact no larger than 32 MiB.");
-                    const h = keccak256(new Uint8Array(await f.arrayBuffer()));
-                    setComparison(
-                      `${h} · ${h === q.data!.siteHash ? t("Matches approved site hash", "匹配获批网站哈希") : t("Does not match approved site hash", "不匹配获批网站哈希")}`,
-                    );
-                  } catch (e) {
-                    setError(e);
-                  }
-                }}
-              />
-            </label>
-            <p className="hash" role="status">
-              {comparison}
-            </p>
-            <ErrorNote error={error} />
+            <ArtifactComparison
+              key={`${selected}:${q.data.siteHash}`}
+              siteHash={q.data.siteHash}
+            />
             <p>
               {t(
                 "Compare the exact artifact defined by the release manifest. A CID string, directory name or publication observation is not the artifact bytes. Files stay in this browser.",
@@ -455,6 +426,62 @@ export function Releases() {
         </a>
       </section>
       <Inspector />
+    </>
+  );
+}
+
+function ArtifactComparison({ siteHash }: { siteHash: string }) {
+  const { t } = useLocale();
+  const [artifactHash, setArtifactHash] = useState(""),
+    [error, setError] = useState<unknown>();
+  const request = useRef(0);
+  // Releases keys this component by release ID and siteHash: a new approval
+  // clears both the native file input and its verdict. Invalidate pending reads
+  // on unmount, and let only the most recently selected file finish.
+  useEffect(
+    () => () => {
+      request.current++;
+    },
+    [],
+  );
+  return (
+    <>
+      <label className="field">
+        <span>
+          {t(
+            "Compare a downloaded site artifact (Keccak-256)",
+            "对比下载的网站制品（Keccak-256）",
+          )}
+        </span>
+        <input
+          type="file"
+          onChange={async (e) => {
+            const current = ++request.current;
+            setError(undefined);
+            setArtifactHash("");
+            const f = e.target.files?.[0];
+            if (!f) return;
+            try {
+              if (f.size > 32 * 1024 * 1024)
+                throw Error("Select an artifact no larger than 32 MiB.");
+              const bytes = await f.arrayBuffer();
+              if (request.current !== current) return;
+              setArtifactHash(keccak256(new Uint8Array(bytes)));
+            } catch (e) {
+              if (request.current === current) setError(e);
+            }
+          }}
+        />
+      </label>
+      <p className="hash" role="status">
+        {artifactHash &&
+          `${artifactHash} · ${
+            artifactHash === siteHash
+              ? t("Matches approved site hash", "匹配获批网站哈希")
+              : t("Does not match approved site hash", "不匹配获批网站哈希")
+          }`}
+      </p>
+      <ErrorNote error={error} />
     </>
   );
 }

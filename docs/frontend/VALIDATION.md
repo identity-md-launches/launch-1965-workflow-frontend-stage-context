@@ -2,6 +2,12 @@
 
 This is worker-produced evidence for the QUORUM frontend, not independent certification, founder acceptance or a publication attestation. Validation took place on 2026-10-16. No private key was used and no live transaction was broadcast.
 
+## Current revision
+
+All four reopened findings reproduced and were fixed with targeted changes. See [REVISION.md](REVISION.md) for per-finding evidence, before/after measurements, current commands and limitations. The final revision has 18 passing unit tests, five passing targeted browser groups, 18 passing broader Chromium groups, 23 axe scans with zero violations and 16/16 probe checks. The broader browser command exits 1 at WebKit launch because the supplied executable is unavailable; **WebKit was not revalidated**. Current machine-readable results are in `checks.json`, `revision-results.json`, `browser-results.json`, `accessibility-results.json` and `taste.json`.
+
+The remainder of this document records the initially accepted build, including its historical WebKit and live-RPC observations. It is retained as history; current revision evidence and limitations above take precedence. Runtime configuration and deployed ABIs remain unchanged.
+
 ## Delivered scope
 
 Vite/React/TypeScript source, pinned npm lockfile and frontend build scripts are under `web/`; the complete relative-base static export is under `dist/`. Documentation and retained evidence are under `docs/`. Deployed Solidity, root build configuration, existing connector source and existing ABI exports were not changed. `web/.gitignore` is the explicitly allowed ignore file and excludes dependency/cache directories at every nesting level.

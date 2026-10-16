@@ -19,7 +19,7 @@ import {
   type Hex,
 } from "viem";
 import { type Runtime, ZERO_ADDRESS } from "./config";
-import { json, message, same, short } from "./lib";
+import { json, errorPresentation, same, short } from "./lib";
 
 export type Lang = "en" | "zh";
 const Context = createContext<Runtime | null>(null);
@@ -251,10 +251,20 @@ export function useSeat(id: string) {
   });
 }
 export function ErrorNote({ error }: { error: unknown }) {
+  const { lang, t } = useLocale();
+  const { summary, details } = errorPresentation(error, lang);
   return error ? (
-    <p className="error" role="alert">
-      {message(error)}
-    </p>
+    <>
+      <p className="error" role="alert">
+        {summary}
+      </p>
+      {details && (
+        <details>
+          <summary>{t("Technical details", "技术详情")}</summary>
+          <pre className="data">{details}</pre>
+        </details>
+      )}
+    </>
   ) : null;
 }
 export function AddressView({ value }: { value: string }) {

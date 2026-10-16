@@ -1,0 +1,110 @@
+{
+  "notice": "Worker browser fixtures only. The before run asserts reproduction of the four reported defects; the after run asserts repaired behavior. No live transaction was sent.",
+  "before": {
+    "mode": "reproduce accepted export",
+    "results": [
+      {
+        "name": "Full uint256 seat ID wraps at 320 and 390",
+        "passed": true,
+        "detail": [
+          {
+            "width": 320,
+            "scrollWidth": 622,
+            "left": 16,
+            "right": 622.28125,
+            "text": "#1 · Seat 115792089237316195423570985008687907853269984665640564039457584007913129639934",
+            "height": 43.375
+          },
+          {
+            "width": 390,
+            "scrollWidth": 622,
+            "left": 16,
+            "right": 622.28125,
+            "text": "#1 · Seat 115792089237316195423570985008687907853269984665640564039457584007913129639934",
+            "height": 43.375
+          }
+        ]
+      },
+      {
+        "name": "Unavailable admission is unknown; verified zero enables setup notice",
+        "passed": true,
+        "detail": {
+          "firstNotice": "Admission is not configured. The Safe must publish the canonical NFT, fixed connected-seat count and evidence before enrollment. View setup"
+        }
+      },
+      {
+        "name": "Chinese validation and wallet rejection use the selected language",
+        "passed": true,
+        "detail": {
+          "invalidSeatMessage": "Enter a non-negative whole number."
+        }
+      },
+      {
+        "name": "Artifact verdict and file selection belong to the displayed release",
+        "passed": true,
+        "detail": {
+          "hashA": "0xdc13b43999b036765244f16f7a968a4016c7698ff3a79f1790b1abd4f56549bd",
+          "hashB": "0x695aa847038874623b6a7591d1e9cc1042b3f90c46556dd5d71bef0c21694e6d",
+          "verdictAfterSelectingB": "0xdc13b43999b036765244f16f7a968a4016c7698ff3a79f1790b1abd4f56549bd · Matches approved site hash"
+        }
+      }
+    ],
+    "consoleOrResourceErrors": []
+  },
+  "after": {
+    "mode": "regression",
+    "results": [
+      {
+        "name": "Full uint256 seat ID wraps at 320 and 390",
+        "passed": true,
+        "detail": [
+          {
+            "width": 320,
+            "scrollWidth": 320,
+            "left": 16,
+            "right": 304,
+            "text": "#1 · Seat 115792089237316195423570985008687907853269984665640564039457584007913129639934",
+            "height": 86.75
+          },
+          {
+            "width": 390,
+            "scrollWidth": 390,
+            "left": 16,
+            "right": 374,
+            "text": "#1 · Seat 115792089237316195423570985008687907853269984665640564039457584007913129639934",
+            "height": 65.0625
+          }
+        ]
+      },
+      {
+        "name": "Unavailable admission is unknown; verified zero enables setup notice",
+        "passed": true,
+        "detail": {
+          "firstNotice": "Checking admission…"
+        }
+      },
+      {
+        "name": "Chinese validation and wallet rejection use the selected language",
+        "passed": true,
+        "detail": {
+          "invalidSeatMessage": "请输入非负整数。"
+        }
+      },
+      {
+        "name": "Artifact verdict and file selection belong to the displayed release",
+        "passed": true,
+        "detail": {
+          "hashA": "0xdc13b43999b036765244f16f7a968a4016c7698ff3a79f1790b1abd4f56549bd",
+          "hashB": "0x695aa847038874623b6a7591d1e9cc1042b3f90c46556dd5d71bef0c21694e6d",
+          "verdictAfterSelectingB": ""
+        }
+      },
+      {
+        "name": "Pending artifact hashes cannot overwrite a new release or newer file",
+        "passed": true,
+        "detail": "Delayed reads discarded across release changes and file replacement."
+      }
+    ],
+    "consoleOrResourceErrors": []
+  }
+}

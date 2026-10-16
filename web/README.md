@@ -47,6 +47,10 @@ Every transaction is simulated, estimated and shown for explicit review; the wal
 
 Public RPCs use ordered fallback. A connected visitor can explicitly choose wallet RPC fallback after read failures. Read freshness and block height are displayed; there is no invented balance or success state. No USD oracle was supplied, so amounts use the actual token decimals and explicitly omit USD estimates. Address inputs require explicit EVM addresses; no additional ENS resolver address is invented outside the supplied network configuration.
 
+## Revision regression checks
+
+`npm run test:revision --prefix web` checks long seat IDs at phone widths, unavailable admission, localized validation/wallet rejection, release-bound file comparisons and overlapping file reads against the production export. Build first. Fixture responses are confined to tests; no live transaction is broadcast. See [revision evidence](../docs/frontend/REVISION.md) for the provided-browser invocation, measured results and the unavailable WebKit limitation. The accepted design and deployment configuration are preserved.
+
 ## Validation
 
 ```sh

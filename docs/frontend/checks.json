@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-10-16T11:22:31.019817+00:00",
+  "checkedAt": "2026-10-16T11:46:59.194471+00:00",
   "authority": "Worker self-checks only; no independent certification or production handover acceptance.",
   "sourceCommit": "44d1ae8434901783800c96727562437512f4560c",
-  "manifestSha256": "d627a1353e510c55574fb58381566a1ac28cd9e2c7b80b156dab10ea3efed510",
+  "manifestSha256": "a7cd92982e39eb2575469a8737594797697ebed7b33b7a881eb0b0a373922137",
   "commands": [
     {
       "command": "npm run build --prefix web",
       "exitCode": 0,
-      "result": "TypeScript and Vite build passed; 7 canonical ABI hashes verified; manifest written last."
+      "result": "TypeScript and Vite build passed; 7 canonical ABI hashes verified; manifest written after export."
     },
     {
       "command": "npm run typecheck --prefix web",
@@ -16,8 +16,8 @@
     {
       "command": "npm test --prefix web",
       "exitCode": 0,
-      "tests": 12,
-      "passed": 12,
+      "tests": 18,
+      "passed": 18,
       "failed": 0
     },
     {
@@ -25,22 +25,27 @@
       "exitCode": 0,
       "contracts": 7,
       "assets": 25,
-      "assetBytes": 1765686,
-      "exportIncludingManifestBytes": 1772674
+      "assetBytes": 1775272,
+      "exportIncludingManifestBytes": 1782260
     },
     {
-      "command": "npm run test:browser --prefix web",
+      "command": "node --import ./test/scratch/use-provided-playwright.mjs web/tests/revision.mjs",
       "exitCode": 0,
-      "groupedChecks": 19,
+      "groupedChecks": 5,
       "engines": [
-        "Chromium",
-        "WebKit"
+        "Chromium"
       ],
-      "checkedAt": "2026-10-16T11:21:41.190Z",
+      "evidence": "revision-results.json"
+    },
+    {
+      "command": "node --import ./test/scratch/use-provided-playwright.mjs web/tests/browser.mjs",
+      "exitCode": 1,
+      "passedChromiumGroups": 18,
+      "WebKit": "Not run: supplied executable unavailable; full command exits 1 at launch.",
       "evidence": "browser-results.json"
     },
     {
-      "command": "npm run test:a11y --prefix web",
+      "command": "node --import ./test/scratch/use-provided-playwright.mjs web/tests/audit.mjs",
       "exitCode": 0,
       "scans": 23,
       "violations": 0,
@@ -48,27 +53,30 @@
       "evidence": "accessibility-results.json"
     },
     {
-      "command": "node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste",
+      "command": "node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste --offline",
       "exitCode": 0,
       "checks": 16,
       "passed": 16,
       "evidence": "taste.json"
-    },
-    {
-      "command": "npm run check:rpc --prefix web",
-      "exitCode": 0,
-      "kind": "Read-only live chain/code/state/quote observation",
-      "transactionsBroadcast": 0,
-      "evidence": "rpc-read.json"
     }
   ],
+  "browserInvocation": "Supplied Playwright/Chromium selected explicitly; reproduction instructions in REVISION.md. No browser download.",
   "handoffCopiesByteIdentical": true,
   "packageManifestMatchesLockfile": true,
   "excludedFromSubmission": [
     "frontend node_modules",
     "package manager caches",
-    "browser binaries and OS libraries",
+    "browser binaries",
     "test/scratch"
   ],
-  "limitations": "See VALIDATION.md. Real wallets/funds, founder rehearsal, independent audit and publication were not validated."
+  "historicalLiveObservation": "rpc-read.json is unchanged evidence from the previously accepted round, not a current revision RPC check.",
+  "limitations": "WebKit unavailable. No live transactions, real wallets/funds, founder rehearsal, independent audit or publication validation. See REVISION.md.",
+  "gitDelivery": {
+    "staging": "failed",
+    "reason": "Git could not create .git/index.lock: Read-only file system.",
+    "commitCreated": false,
+    "delivery": "Source, export, documentation and finding responses are present in the working tree; submission worker must commit."
+  },
+  "workingTreeSubmissionBytes": 5453429,
+  "scopeCheck": "All changes are inside web/, dist/ or docs/, except the explicitly required .imd-responses.json. No submodules, dependency/cache paths or missing manifest assets."
 }

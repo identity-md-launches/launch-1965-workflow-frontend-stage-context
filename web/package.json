@@ -13,7 +13,8 @@
     "check:export": "node scripts/check-export.mjs",
     "share": "node scripts/share.mjs",
     "test:a11y": "node tests/audit.mjs",
-    "check:rpc": "node scripts/check-rpc.mjs"
+    "check:rpc": "node scripts/check-rpc.mjs",
+    "test:revision": "node tests/revision.mjs"
   },
   "dependencies": {
     "@tanstack/react-query": "5.90.2",
